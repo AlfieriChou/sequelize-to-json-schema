@@ -4,7 +4,7 @@
   "description": "Use your Sequelize models to generate json schema.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "homepage": "https://github.com/AlfieriChou/sequelize-to-json-schema#readme",
   "dependencies": {
     "sequelize": "^5.8.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
   }
 }
