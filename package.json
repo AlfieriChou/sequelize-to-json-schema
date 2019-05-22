@@ -4,7 +4,8 @@
   "description": "Use your Sequelize models to generate json schema.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "nyc mocha --exit",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,12 @@
   },
   "homepage": "https://github.com/AlfieriChou/sequelize-to-json-schema#readme",
   "dependencies": {
-    "sequelize": "^5.8.6"
+    "mysql2": "1.6.5",
+    "sequelize": "5.8.6"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "chai": "4.2.0",
+    "mocha": "6.1.4",
+    "nyc": "14.1.1"
   }
 }
