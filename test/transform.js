@@ -46,4 +46,29 @@ describe('test transform!!!', () => {
     )
     done()
   })
+
+  it('transform model exclude!!', done => {
+    const Project = sequelize.define('Project', {
+      title: { type: Sequelize.STRING, comment: 'title' },
+      description: { type: Sequelize.TEXT, comment: 'description' }
+    })
+    const transformModel = s2json.transform(Project, {
+      exclude: ['title']
+    })
+    expect(transformModel).to.eql(
+      {
+        type: 'object',
+        properties:
+        {
+          id: { type: 'integer', format: 'int32', description: undefined },
+          description: { type: 'string', description: 'description' },
+          createdAt:
+            { type: 'string', format: 'date-time', description: undefined },
+          updatedAt:
+            { type: 'string', format: 'date-time', description: undefined }
+        }
+      }
+    )
+    done()
+  })
 })

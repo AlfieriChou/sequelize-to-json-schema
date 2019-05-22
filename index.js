@@ -17,7 +17,7 @@ class JsonSchema {
     if (type instanceof Sequelize.DECIMAL) { return { type: addNull ? ['number', 'null'] : 'number', description: comment } }
     if (type instanceof Sequelize.DATEONLY) { return { type: addNull ? ['string', 'null'] : 'string', format: 'date', description: comment } }
     if (type instanceof Sequelize.DATE) { return { type: addNull ? ['string', 'null'] : 'string', format: 'date-time', description: comment } }
-    if (type instanceof Sequelize.TIME) { return { type: addNull ? ['string', 'null'] : 'string', description: comment } }
+    // if (type instanceof Sequelize.TIME) { return { type: addNull ? ['string', 'null'] : 'string', description: comment } }
     if (type instanceof Sequelize.UUID ||
     type instanceof Sequelize.UUIDV1 ||
     type instanceof Sequelize.UUIDV4) {
@@ -31,7 +31,7 @@ class JsonSchema {
     type instanceof Sequelize.DATEONLY ||
     type instanceof Sequelize.TIME) {
       const schema = { type: addNull ? ['string', 'null'] : 'string' }
-      var maxLength = (type.options && type.options.length) || type._length
+      let maxLength = (type.options && type.options.length) || type._length
       if (type instanceof Sequelize.TEXT) {
         switch (maxLength) {
           case 'tiny': maxLength = 255

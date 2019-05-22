@@ -23,6 +23,63 @@ describe('test convert!!!', () => {
     done()
   })
 
+  it('convert virtual!!', (done) => {
+    const convertStr = {
+      test: {
+        type: new Sequelize.VIRTUAL(Sequelize.BOOLEAN),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'boolean', description: undefined }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert time!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.TIME,
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'time', description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert exclude!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.STRING,
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr, {
+      exclude: ['test']
+    })
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {}
+      }
+    )
+    done()
+  })
+
   it('convert boolean!!', (done) => {
     const convertStr = {
       test: {
