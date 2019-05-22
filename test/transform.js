@@ -18,7 +18,9 @@ describe('test transform!!!', () => {
   it('transform model!!', done => {
     const Project = sequelize.define('Project', {
       title: { type: Sequelize.STRING, comment: 'title' },
+      bigint: { type: Sequelize.BIGINT, comment: 'test bigint' },
       number: { type: Sequelize.DOUBLE, comment: 'test double' },
+      number_decimal: { type: Sequelize.DECIMAL, comment: 'test decimal' },
       uuid: { type: Sequelize.UUID, comment: 'test uuid' },
       description: { type: Sequelize.TEXT, comment: 'description' }
     })
@@ -30,7 +32,9 @@ describe('test transform!!!', () => {
         {
           id: { type: 'integer', format: 'int32', description: undefined },
           title: { type: 'string', maxLength: 255, description: 'title' },
+          bigint: { type: 'integer', format: 'int32', description: 'test bigint' },
           number: { type: 'number', format: 'double', description: 'test double' },
+          number_decimal: { type: 'number', description: 'test decimal' },
           uuid: { type: 'string', format: 'uuid', description: 'test uuid' },
           description: { type: 'string', description: 'description' },
           createdAt:
