@@ -146,7 +146,7 @@ describe('test convert!!!', () => {
   it('convert time!!', (done) => {
     const convertStr = {
       test: {
-        type: Sequelize.TIME,
+        type: Sequelize.TIME(),
         comment: 'test field'
       }
     }
@@ -155,7 +155,7 @@ describe('test convert!!!', () => {
       {
         type: 'object',
         properties: {
-          test: { type: 'time', description: 'test field' }
+          test: { type: 'string', description: 'test field' }
         }
       }
     )
