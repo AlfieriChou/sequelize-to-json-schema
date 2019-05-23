@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+node_js:
+  - '8'
+  - '10'
+install:
+  - npm i npminstall && npminstall
+script:
+  - npm test
+after_success: 
+  npm run coverage
+branches:
+  only:
+    - master
