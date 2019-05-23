@@ -42,6 +42,107 @@ describe('test convert!!!', () => {
     done()
   })
 
+  it('convert float!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.FLOAT(),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'number', format: 'float', description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert real!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.REAL(),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'number', format: 'float', description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert text tiny!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.TEXT({
+          length: 'tiny'
+        }),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'string', maxLength: 255, description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert text medium!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.TEXT({
+          length: 'medium'
+        }),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'string', maxLength: 16777215, description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
+  it('convert text long!!', (done) => {
+    const convertStr = {
+      test: {
+        type: Sequelize.TEXT({
+          length: 'long'
+        }),
+        comment: 'test field'
+      }
+    }
+    const convertJson = s2json.convert(convertStr)
+    expect(convertJson).to.eql(
+      {
+        type: 'object',
+        properties: {
+          test: { type: 'string', maxLength: 4294967295, description: 'test field' }
+        }
+      }
+    )
+    done()
+  })
+
   it('convert time!!', (done) => {
     const convertStr = {
       test: {
