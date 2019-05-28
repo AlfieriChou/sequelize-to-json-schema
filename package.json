@@ -1,6 +1,6 @@
 {
   "name": "sequelize-model-to-json-schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use your Sequelize models to generate json schema.",
   "main": "index.js",
   "scripts": {

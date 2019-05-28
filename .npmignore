@@ -1,0 +1,10 @@
+*.log
+node_modules
+test
+.gitignore
+.npmignore
+.travis.yml
+appveyor.yml
+.nyc_output
+coverage.lcov
+renovate.json
