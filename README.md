@@ -2,6 +2,7 @@
 
 [![standard][standard-image]][standard-url]
 
+[![Package Quality][quality-image]][quality-url]
 [![Build Status][travis-image]][travis-url]
 [![codecov][codecov-image]][codecov-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
@@ -157,6 +158,8 @@ Sequelize model generate to json schema.
     } -->
     ```
 
+[quality-image]: http://npm.packagequality.com/shield/sequelize-model-to-json-schema.svg
+[quality-url]: http://packagequality.com/#?package=sequelize-model-to-json-schema
 [travis-image]: https://travis-ci.org/AlfieriChou/sequelize-to-json-schema.svg?branch=master
 [travis-url]: https://travis-ci.org/AlfieriChou/sequelize-to-json-schema
 [codecov-image]: https://codecov.io/gh/AlfieriChou/sequelize-to-json-schema/branch/master/graph/badge.svg
