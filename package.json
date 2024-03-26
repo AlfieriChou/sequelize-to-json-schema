@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/AlfieriChou/sequelize-to-json-schema#readme",
   "dependencies": {
-    "mysql2": "1.6.5",
+    "mysql2": "3.9.3",
     "sequelize": "5.8.6"
   },
   "devDependencies": {
